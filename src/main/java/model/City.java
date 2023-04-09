@@ -4,10 +4,9 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "сity")
+@Table(name = "city")
 public class City {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "city_name")

@@ -13,8 +13,6 @@ import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
 
-    CityDao cityDao = new CityDaoImpl();
-
 
     @Override
     public Employee findEmployeeById(Long id) {

@@ -8,7 +8,6 @@ import java.util.Objects;
 
 public class Employee {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "first_name")
@@ -18,7 +17,7 @@ public class Employee {
     @Column(name = "age")
     private Integer age;
     @ManyToOne
-    @JoinColumn(referencedColumnName = "id")
+    @JoinColumn(name = "city_id")
     private City city;
 
     public Employee(Long id,String firstName, String lastName, Integer age, City city) {
