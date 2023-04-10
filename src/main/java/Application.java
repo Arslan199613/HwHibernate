@@ -11,6 +11,8 @@ public class Application {
    private static CityDao cityDao = new CityDaoImpl();
    public static EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 
+
+
     //Операции с городами
 
     static void createCity(City city) {
@@ -71,8 +73,16 @@ public class Application {
     }
 
     public static void main(String[] args) {
-        printEmployees();
+        City city = new City("Samara");
+        cityDao.createNewCity(city);
 
+        Employee ivan = new Employee(4L, "Ivan", "Petrov", 28, city);
+        employeeDAO.addEmployee(ivan);
+
+        Employee mariya= new Employee(5L, "Maria", "Sidorova", 25, city);
+        employeeDAO.addEmployee(mariya);
+
+        System.out.println(cityDao.findCityById(city.getId()).getEmployeeList());
 
     }
 }

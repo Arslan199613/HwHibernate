@@ -36,6 +36,14 @@ public class City {
         this.id = id;
     }
 
+    public List<Employee> getEmployeeList() {
+        return employeeList;
+    }
+
+    public void setEmployeeList(List<Employee> employeeList) {
+        this.employeeList = employeeList;
+    }
+
     public City(String name) {
         this.name = name;
     }

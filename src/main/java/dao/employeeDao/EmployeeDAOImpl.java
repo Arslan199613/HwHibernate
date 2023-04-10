@@ -23,7 +23,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     public void addEmployee(Employee employee) {
 
         try (Session session = HibernateSessionFactoryUtill.getSessionFactory().openSession()) {
-            Transaction transaction = session.getTransaction();
+            Transaction transaction = session.beginTransaction();
             session.save(employee);
             transaction.commit();
 
